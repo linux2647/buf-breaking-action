@@ -69,6 +69,9 @@ export async function run(): Promise<void> {
 // runBreaking runs the buf-breaking action, and returns
 // a non-empty error if it fails.
 async function runBreaking(): Promise<null | Error> {
+  console.log("Running")
+  core.info("Core Running")
+  
   const input = core.getInput("input");
   if (input === "") {
     return {
@@ -143,6 +146,7 @@ async function runBreaking(): Promise<null | Error> {
   
   // Emit raw output to be viewed in logs
   console.log(result.raw)
+  core.info(`Core raw ${result.raw}`)
 
   // If this action was configured for pull requests, we post the
   // FileAnnotations as comments.
