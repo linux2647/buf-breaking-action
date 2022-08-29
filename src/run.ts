@@ -140,6 +140,9 @@ async function runBreaking(): Promise<null | Error> {
     core.info("No breaking errors were found.");
     return null;
   }
+  
+  // Emit raw output to be viewed in logs
+  console.log(result.raw)
 
   // If this action was configured for pull requests, we post the
   // FileAnnotations as comments.
